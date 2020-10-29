@@ -71,6 +71,7 @@ int main()
 	square.shader.setVec3("ourColor", glm::vec3(1.0f,1.0f,1.0f));
 	square.SetRotation(-89.f,glm::vec3(1.0f, 0.f, 0.f));
 	square.SetPosition(glm::vec3(0,0,-0.5f));
+
 	square.SetTexture("Asset/Textures/wall.jpg");
 
 	Box box;
