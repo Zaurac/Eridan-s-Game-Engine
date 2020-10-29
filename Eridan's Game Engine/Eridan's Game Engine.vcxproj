@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{3f26e4ab-f1bb-4b7e-aed7-31a8c38a01be}</ProjectGuid>
+    <RootNamespace>EridansGameEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\assimp\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Engine\Renderer\OpenGL;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Engine\Renderer;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glad\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glfw\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\assimp\lib;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glfw\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;assimp-vc142-mtd.lib;IrrXMLd.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\assimp\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Engine\Renderer\OpenGL;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Engine\Renderer;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glad\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glfw\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\assimp\lib;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glfw\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;assimp-vc142-mtd.lib;IrrXMLd.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\assimp\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Engine\Renderer\OpenGL;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Engine\Renderer;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glad\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glfw\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\assimp\lib;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glfw\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;assimp-vc142-mtd.lib;IrrXMLd.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\assimp\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Engine\Renderer\OpenGL;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Engine\Renderer;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glad\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glfw\include;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\assimp\lib;C:\Users\Zaurac\source\repos\Eridan%27s Game Engine\Eridan%27s Game Engine\Dependencies\glfw\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;assimp-vc142-mtd.lib;IrrXMLd.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Dependencies\glad\src\glad.c" />
+    <ClCompile Include="Engine\BasicGeometry\OpenGL\Box.cpp" />
+    <ClCompile Include="Engine\BasicGeometry\OpenGL\Square.cpp" />
+    <ClCompile Include="Engine\BasicGeometry\OpenGL\Triangles.cpp" />
+    <ClCompile Include="Engine\Imgui\imgui.cpp" />
+    <ClCompile Include="Engine\Imgui\imguiCustom.cpp" />
+    <ClCompile Include="Engine\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="Engine\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="Engine\Imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="Engine\Imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Engine\Imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Engine\Renderer\OpenGL\Camera.cpp" />
+    <ClCompile Include="Engine\Renderer\OpenGL\Entity.cpp" />
+    <ClCompile Include="Engine\Renderer\OpenGL\Light.cpp" />
+    <ClCompile Include="Engine\Renderer\OpenGL\Renderer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ShaderLoaderOpenGL.cpp" />
+    <ClCompile Include="Texture2DLoaderOpenGL.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\BasicGeometry\OpenGL\Box.h" />
+    <ClInclude Include="Engine\BasicGeometry\OpenGL\Square.h" />
+    <ClInclude Include="Engine\BasicGeometry\OpenGL\Triangles.h" />
+    <ClInclude Include="Engine\Imgui\imconfig.h" />
+    <ClInclude Include="Engine\Imgui\imgui.h" />
+    <ClInclude Include="Engine\Imgui\imguiCustom.h" />
+    <ClInclude Include="Engine\Imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="Engine\Imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="Engine\Imgui\imgui_internal.h" />
+    <ClInclude Include="Engine\Imgui\imstb_rectpack.h" />
+    <ClInclude Include="Engine\Imgui\imstb_textedit.h" />
+    <ClInclude Include="Engine\Imgui\imstb_truetype.h" />
+    <ClInclude Include="Engine\Renderer\OpenGL\Camera.h">
+      <DeploymentContent>false</DeploymentContent>
+    </ClInclude>
+    <ClInclude Include="Engine\Renderer\OpenGL\Entity.h" />
+    <ClInclude Include="Engine\Renderer\OpenGL\Light.h" />
+    <ClInclude Include="Engine\Renderer\OpenGL\Renderer.h" />
+    <ClInclude Include="Engine\Stb\stb_image.h" />
+    <ClInclude Include="Include.h" />
+    <ClInclude Include="ShaderLoaderOpenGL.h" />
+    <ClInclude Include="Texture2DLoaderOpenGL.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgui.ini" />
+    <None Include="Shader\basic3D.frag" />
+    <None Include="Shader\basic3D.vert" />
+    <None Include="Shader\texture2D.frag" />
+    <None Include="Shader\texture2D.vert" />
+    <None Include="Shader\color1.frag" />
+    <None Include="Shader\color1.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Asset\Textures\empty.jpg" />
+    <Image Include="Asset\Textures\wall.jpg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
