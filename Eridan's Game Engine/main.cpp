@@ -46,6 +46,7 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_SAMPLES, 4);
 	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
+	
 
 	GLFWwindow *windows = glfwCreateWindow(800,600, "Game Engine 3D", NULL, NULL);
 	if (!windows)
@@ -99,6 +100,7 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_MULTISAMPLE);
 	
+	glfwSwapInterval(1);
 
 	float deltaTime = 0.0f;
 	float lastFrame = 0.0f;
@@ -154,5 +156,4 @@ void processInput(GLFWwindow* window)
 	{
 		glfwSetWindowShouldClose(window, true);
 	}
-	
 }
