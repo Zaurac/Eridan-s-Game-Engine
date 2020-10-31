@@ -167,6 +167,7 @@
     <ClCompile Include="Engine\Imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="Engine\Imgui\imgui_widgets.cpp" />
     <ClCompile Include="Engine\Renderer\OpenGL\Camera.cpp" />
+    <ClCompile Include="Engine\Renderer\OpenGL\ContextOpenGL.cpp" />
     <ClCompile Include="Engine\Renderer\OpenGL\Entity.cpp" />
     <ClCompile Include="Engine\Renderer\OpenGL\Light.cpp" />
     <ClCompile Include="Engine\Renderer\OpenGL\Renderer.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="Engine\Renderer\OpenGL\Camera.h">
       <DeploymentContent>false</DeploymentContent>
     </ClInclude>
+    <ClInclude Include="Engine\Renderer\OpenGL\ContextOpenGL.h" />
     <ClInclude Include="Engine\Renderer\OpenGL\Entity.h" />
     <ClInclude Include="Engine\Renderer\OpenGL\Light.h" />
     <ClInclude Include="Engine\Renderer\OpenGL\Renderer.h" />

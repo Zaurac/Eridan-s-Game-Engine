@@ -70,8 +70,6 @@ void Box::CreateBox()
 	CreateEntity();
 
     CreateShader("Shader/texture2D.vert", "Shader/texture2D.frag", SHADER_3D_COLOR);
-
-
     
 }
 

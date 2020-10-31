@@ -149,6 +149,11 @@ void Entity::SetTexture(const char* path)
 	Texture2D texture = Texture2DLoaderOpenGL::LoadTexture(path);
 }
 
+void Entity::SetScale(glm::vec3 scale)
+{
+	model = glm::scale(model, scale);
+}
+
 void Entity::GenerateBufferWithoutEBO()
 {
 	glGenBuffers(1, &VBO);

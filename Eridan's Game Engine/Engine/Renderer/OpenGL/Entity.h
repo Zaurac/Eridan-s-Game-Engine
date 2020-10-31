@@ -43,6 +43,7 @@ public:
 	void SetRotation(float radians,glm::vec3 rotation);
 	void SetColor(glm::vec3 setColor);
 	void SetTexture(const char* path);
+	void SetScale(glm::vec3 scale);
 
 	void CreateVertex(float x, float y, float z);
 	void CreateVertex(glm::vec3 position, glm::vec3 normal);
