@@ -45,8 +45,6 @@ void Entity::Draw(Camera &camera)
 {
 	shader.Use();
 
-	
-
 	if (texture.texture != NULL)
 	{
 		glBindTexture(GL_TEXTURE_2D, texture.texture);
@@ -57,24 +55,33 @@ void Entity::Draw(Camera &camera)
 		glBindTexture(GL_TEXTURE_2D, texture.texture);
 	}
 
-
-	if (type == SHADER_3D_COLOR)
-	{	
-		shader.setUniformMatrix4("model", model);
-		shader.setUniformMatrix4("view", camera.getViewMatrix());
-		shader.setUniformMatrix4("projection", camera.getProjectionMatrix());
-	}
-
-	if (EBO != NULL)
+	if (!vertices.empty())
 	{
+	
+
+		if (type == SHADER_3D_COLOR)
+		{	
+			shader.setUniformMatrix4("model", model);
+			shader.setUniformMatrix4("view", camera.getViewMatrix());
+			shader.setUniformMatrix4("projection", camera.getProjectionMatrix());
+		}
+
+		if (EBO != NULL)
+		{
 		
-		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, (GLsizei)this->indices.size(), GL_UNSIGNED_INT, 0);
+			glBindVertexArray(VAO);
+			glDrawElements(GL_TRIANGLES, (GLsizei)this->indices.size(), GL_UNSIGNED_INT, 0);
+		}
+		else
+		{
+			glBindVertexArray(VAO);
+			glDrawArrays(GL_TRIANGLES, 0, (GLsizei)this->vertices.size());
+		}
+
 	}
 	else
 	{
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, (GLsizei)this->vertices.size());
+		std::cout << "ERROR::VERTICES::EMPTY" << std::endl;
 	}
 }
 

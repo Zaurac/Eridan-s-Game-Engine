@@ -1,4 +1,4 @@
-#include "Include.h"
+﻿#include "Include.h"
 #include <GLFW/glfw3.h>
 
 
@@ -22,6 +22,7 @@
 #include "Engine/Renderer/OpenGL/Renderer.h"
 
 #include "Engine/Renderer/OpenGL/ContextOpenGL.h"
+#include "Engine/BasicGeometry/Model.h"
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -46,6 +47,10 @@ int main()
 	Renderer renderer(context.GetWindow(), camera);
 
 	imguiCustom::Imgui_Init(context.GetWindow());
+
+	std::cout << "Renderer : " << glGetString(GL_RENDERER) << std::endl;
+	std::cout << "Version OpenGL : " << glGetString(GL_VERSION) << std::endl;
+	std::cout << "Shader Version OpenGL : " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 
 	Square square;
 	square.CreateQuad();
@@ -81,6 +86,24 @@ int main()
 	square.shader.setVec3("lightPos", lightPos);
 	square.SetScale(glm::vec3(10,10,0));
 
+
+	Model ship = Model("Asset/Mesh/Intergalactic_Spaceship.obj");
+	ship.CreateShader("Shader/texture2D.vert","Shader/texture2D.frag", SHADER_3D_COLOR);
+	ship.SetColor(glm::vec3(1.0f, 1.0f, 1.0f));
+	ship.SetPosition(glm::vec3(-1.5f,3.0f,-5.0f));
+	ship.shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	ship.shader.setVec3("lightPos", lightPos);
+
+
+	//Model guitar = Model("Asset/Mesh/Gladiator/untitled.fbx");
+	Model guitar = Model("Asset/Mesh/Gladiator/Gladiator.fbx");
+	guitar.CreateShader("Shader/texture2D.vert", "Shader/texture2D.frag", SHADER_3D_COLOR);
+	guitar.SetColor(glm::vec3(1.0f, 1.0f, 1.0f));
+	guitar.SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+	guitar.SetScale(glm::vec3(0.01f,0.01f,0.01f));
+	guitar.shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	guitar.shader.setVec3("lightPos", lightPos);
+
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_MULTISAMPLE);
 	
@@ -112,7 +135,8 @@ int main()
 		renderer.AddViewport(box);
 		renderer.AddViewport(box2);
 		renderer.AddViewport(light1);
-
+		renderer.AddViewport(ship);
+		renderer.AddViewport(guitar);
 		
 
 		imguiCustom::Imgui_Render();

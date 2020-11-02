@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dependencies\glad\src\glad.c" />
+    <ClCompile Include="Engine\BasicGeometry\Model.cpp" />
     <ClCompile Include="Engine\BasicGeometry\OpenGL\Box.cpp" />
     <ClCompile Include="Engine\BasicGeometry\OpenGL\Square.cpp" />
     <ClCompile Include="Engine\BasicGeometry\OpenGL\Triangles.cpp" />
@@ -176,6 +177,7 @@
     <ClCompile Include="Texture2DLoaderOpenGL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\BasicGeometry\Model.h" />
     <ClInclude Include="Engine\BasicGeometry\OpenGL\Box.h" />
     <ClInclude Include="Engine\BasicGeometry\OpenGL\Square.h" />
     <ClInclude Include="Engine\BasicGeometry\OpenGL\Triangles.h" />
