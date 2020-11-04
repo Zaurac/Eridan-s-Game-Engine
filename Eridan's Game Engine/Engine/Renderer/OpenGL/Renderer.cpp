@@ -12,8 +12,8 @@ Renderer::~Renderer()
 
 void Renderer::AddViewport(Entity& entity)
 {
-	entity.Draw(camera);
 	camera.Update(window);
+	entity.Draw(camera);
 }
 
 void Renderer::Destroy()

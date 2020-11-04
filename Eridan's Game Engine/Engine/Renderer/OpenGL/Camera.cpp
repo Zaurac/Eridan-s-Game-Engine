@@ -5,8 +5,9 @@ Camera::Camera()
 	view = glm::mat4(1.0f);
 	projection = glm::mat4(1.0f);
 	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-	projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);
 
+	projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);
+	
 
 	//camera param
 	position = glm::vec3(0.0f, 0.0f, 3.0f);
@@ -21,8 +22,11 @@ Camera::~Camera()
 void Camera::Update(GLFWwindow* camera)
 {
 	MoveCamera(camera);
+	glfwGetWindowSize(camera, &width, &height);
+	projection = glm::perspective(glm::radians(45.0f), (float)width / (float)height, 0.1f, 100.0f);
 	view = glm::lookAt(position, position + cameraFront, cameraUp);
 }
+
 
 void Camera::MoveCamera(GLFWwindow* camera)
 {
@@ -46,3 +50,4 @@ void Camera::MoveCamera(GLFWwindow* camera)
 		position += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 	}
 }
+

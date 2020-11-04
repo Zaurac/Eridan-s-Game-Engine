@@ -64,6 +64,7 @@ void Entity::Draw(Camera &camera)
 			shader.setUniformMatrix4("model", model);
 			shader.setUniformMatrix4("view", camera.getViewMatrix());
 			shader.setUniformMatrix4("projection", camera.getProjectionMatrix());
+			
 		}
 
 		if (EBO != NULL)

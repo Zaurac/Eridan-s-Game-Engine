@@ -2,6 +2,8 @@
 
 Model::~Model()
 {
+	vertices.clear();
+	indices.clear();
 }
 
 void Model::loadModel(std::string const& patch)
@@ -20,7 +22,6 @@ void Model::loadModel(std::string const& patch)
 	for (unsigned int i = 0; i < pScene->mNumMeshes; i++)
 	{
 		aiMesh* mesh = scene->mMeshes[i];
-		
 		for (unsigned int i = 0; i < mesh->mNumVertices; i++)
 		{
 			
@@ -54,7 +55,7 @@ void Model::loadModel(std::string const& patch)
 			}
 		}
 		
-
+		
 	}
 
 	CreateEntity();

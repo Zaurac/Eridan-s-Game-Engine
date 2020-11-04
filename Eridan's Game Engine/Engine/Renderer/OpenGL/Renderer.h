@@ -17,4 +17,7 @@ protected:
 	Camera camera;
 
 	std::vector<Entity*> entitys;
+
+private:
+	int width, height;
 };

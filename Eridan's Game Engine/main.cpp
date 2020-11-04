@@ -24,7 +24,6 @@
 #include "Engine/Renderer/OpenGL/ContextOpenGL.h"
 #include "Engine/BasicGeometry/Model.h"
 
-
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -95,22 +94,38 @@ int main()
 	ship.shader.setVec3("lightPos", lightPos);
 
 
-	//Model guitar = Model("Asset/Mesh/Gladiator/untitled.fbx");
-	Model guitar = Model("Asset/Mesh/Gladiator/Gladiator.fbx");
-	guitar.CreateShader("Shader/texture2D.vert", "Shader/texture2D.frag", SHADER_3D_COLOR);
-	guitar.SetColor(glm::vec3(1.0f, 1.0f, 1.0f));
-	guitar.SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
-	guitar.SetScale(glm::vec3(0.01f,0.01f,0.01f));
-	guitar.shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
-	guitar.shader.setVec3("lightPos", lightPos);
+	//Model gladiator = Model("Asset/Mesh/Gladiator/untitled.fbx");
+	Model gladiator = Model("Asset/Mesh/Gladiator/Gladiator.fbx");
+	gladiator.CreateShader("Shader/texture2D.vert", "Shader/texture2D.frag", SHADER_3D_COLOR);
+	gladiator.SetColor(glm::vec3(1.0f, 1.0f, 1.0f));
+	gladiator.SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+	gladiator.SetScale(glm::vec3(0.01f,0.01f,0.01f));
+	gladiator.shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	gladiator.shader.setVec3("lightPos", lightPos);
+
+	/*Model sponza = Model("Asset/Mesh/Sponza/sponza.obj");
+	sponza.CreateShader("Shader/texture2D.vert", "Shader/texture2D.frag", SHADER_3D_COLOR);
+	sponza.SetColor(glm::vec3(1.0f, 1.0f, 1.0f));
+	sponza.SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+	sponza.SetScale(glm::vec3(0.01f, 0.01f, 0.01f));
+	sponza.shader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	sponza.shader.setVec3("lightPos", lightPos);*/
+
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_MULTISAMPLE);
+	//glEnable(GL_FRAMEBUFFER_SRGB);
+
+	glDepthFunc(GL_LESS);
 	
 	glfwSwapInterval(1);
 
 	float deltaTime = 0.0f;
 	float lastFrame = 0.0f;
+
+	
+
+	
 
 	while (!glfwWindowShouldClose(context.GetWindow()))
 	{
@@ -124,6 +139,8 @@ int main()
 		box2.shader.setVec3("viewPos", camera.getPosition());
 		box.SetRotation((float)0.01f * 50.f,glm::vec3(0.0f, 1.0f,	0.0f));
 
+		
+
 		//DELTA TIME
 		float currentFrame = (float)glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
@@ -136,10 +153,12 @@ int main()
 		renderer.AddViewport(box2);
 		renderer.AddViewport(light1);
 		renderer.AddViewport(ship);
-		renderer.AddViewport(guitar);
+		renderer.AddViewport(gladiator);
+		//renderer.AddViewport(sponza);
 		
 
 		imguiCustom::Imgui_Render();
+		
 		glfwPollEvents();
 		glfwSwapBuffers(context.GetWindow());
 	}

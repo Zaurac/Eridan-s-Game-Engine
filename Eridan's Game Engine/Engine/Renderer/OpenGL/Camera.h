@@ -28,13 +28,12 @@ public:
 	glm::mat4 view;
 	glm::mat4 projection;
 
-	Camera *camera;
-
 	//camera param
 	glm::vec3 position;
 	glm::vec3 cameraFront;
 	glm::vec3 cameraUp;
 
+	int width,height;
 private:
 	
 };
